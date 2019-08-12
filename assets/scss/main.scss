@@ -1,0 +1,55 @@
+////////////////
+//PAGE && LAYOUT ANIMATION
+
+.layout-enter,
+.layout-leave-to {
+  opacity: 0;
+  transform: translate3D(0, 10rem, 0);
+}
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.4s ease-out, transform 0.5s;
+}
+
+.page-enter-active {
+  transition: opacity 0.3s ease-out;
+}
+.page-leave-active {
+  transition: opacity 0.3s ease-in;
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+//////////
+//SKELTON
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-p;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  color: #222;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-h;
+  font-weight: 500;
+  color: $black-d;
+}

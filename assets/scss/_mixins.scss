@@ -1,0 +1,102 @@
+//////
+//Media Queries
+//Desktop first
+@mixin respond($breakpoint) {
+  @if $breakpoint == iphoneX {
+    @media only screen and (max-width: 460px) and (max-aspect-ratio: 1/2) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 460px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-scr {
+    @media only screen and (min-width: 1800px) {
+      @content;
+    }
+  }
+  @if $breakpoint == long-scr {
+    @media only screen and (max-aspect-ratio: 1/1) {
+      @content;
+    }
+  }
+}
+
+//Mobile First
+@mixin respond($breakpoint) {
+  @if $breakpoint == iphoneX {
+    @media only screen and (max-width: 460px) and (max-aspect-ratio: 1/2) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab {
+    @media only screen and (min-width: 461px) {
+      @content;
+    }
+  }
+  @if $breakpoint == pc {
+    @media only screen and (min-width: 769px) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-scr {
+    @media only screen and (min-width: 1800px) {
+      @content;
+    }
+  }
+  @if $breakpoint == long-scr {
+    @media only screen and (min-width: 461px) and (max-aspect-ratio: 1/1) {
+      @content;
+    }
+  }
+}
+
+//Text Shadow
+
+@mixin tsh-s {
+  text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+@mixin tsh-m {
+  text-shadow: 0.4rem 0.4rem 0.6rem rgba(0, 0, 0, 0.2);
+}
+
+//ICONS
+
+@mixin iconHover {
+  filter: drop-shadow(0.6rem 0.8rem 0.7rem rgba(0, 0, 0, 0.3));
+  transform: translate3D(0, -3px, 0);
+  backface-visibility: hidden;
+}
+
+@mixin iconActive {
+  transform: translate3D(0, -1px, 0);
+  filter: drop-shadow(0.3rem 0.5rem 0.4rem rgba(0, 0, 0, 0.25));
+  backface-visibility: hidden;
+}
+
+//Transitions
+
+@mixin box-hover {
+  box-shadow: 0 0.8rem 0.8rem 0.2rem rgba(0, 0, 0, 0.25);
+  transform: translateY(-0.5rem);
+}
+
+@mixin box-active {
+  box-shadow: 0 0.2rem 0.5rem 0.2rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.2rem);
+}
+
+//Focus Outline for Mobile
+
+@mixin focus-ol {
+  outline: groove 3px rgba(#6180aa, 0.4) !important;
+  outline-offset: 1.5rem;
+}
