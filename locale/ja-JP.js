@@ -8,35 +8,35 @@ export default {
       'ミュンヘンで ドイツ語/イタリア語/英語/日本語 のプライベートレッスン、料理教室 をしています。　翻訳・通訳も受け付けています。 20年以上日本で教えてきた講師と、楽しく学びましょう！'
   },
   // Header Section
-  navTitle: 'Marina’s lessons\nTranslations and Interpreting',
+  navTitle: '言語レッスン・通訳・料理教室',
   heroTitle: {
-    pc: 'Language Lessons,\nTranslations and Interpreting',
-    mobile: 'Language Lessons\nTranslations\nInterpreting'
+    pc: 'マリナ・ソランツォの\nレッスン/通訳/料理教室',
+    mobile: '伊・独・英 -\nレッスン/通訳、\n料理教室'
   },
   heroSub: {
-    pc: 'for Italian, English, German and Japanese in Munich',
-    mobile: 'in Munich'
+    pc: 'イタリア語・ドイツ語・英語　@ミュンヘン',
+    mobile: '@ミュンヘン'
   },
   //About Section
   aboutTitle: 'マリナ・ソランツォ',
-  aboutSub: 'Italian who lived in Germany and Japan',
+  aboutSub: 'イタリア育ち、日本●年、ドイツ何年',
   intro: {
     b1:
-      'Hi!\nAre you thinking about learning one of the above languages?\nAnd you’re looking for a good teacher?\nMy name is Marina Soranzo and I teach Italian, English, German and Japanese with teaching experience in Sendai, Japan (Universities, private language schools, High schools) and Germany (München). I also had private lessons.',
+      'こんにちは！\nイタリア語・英語・ドイツ語についてお困りですか？いい先生をお探しですか？\n私はイタリア出身のマリナ・ソランツォです。 イタリアで育ちドイツに○年、日本の仙台に○年住んだ後、○年前からドイツに戻ってきました。(ドイツは計○年ですね。)',
     b2:
-      'Translating and interpreting experience in Japan at sport events like Football World Cup 2002, Superbike, business negotiations, museum expositions, politic meetings and events, and in Germany (business).',
+      '日本では、大学・高校・語学学校でイタリア語（グループ・プライベート両方）を教えていました。\n翻訳/通訳もお任せください！2002年サッカーワールドカップや政治イベント、スーパーバイクや商談、美術館博覧会など様々な場面での経験があります。\nまた、テレビ番組やフェイストゥーフェイスでのイタリア料理教室もしていました。',
     b3:
-      'Flexibility, patience and motivation are some of the things I can offer. I enjoy helping others to learn a language and come to like it!\nI can visit you, or you come to me, just as it’s suitable each time.',
-    b4: 'I am looking forward to hearing/reading from you!'
+      'ご希望に沿って柔軟に、且つ精一杯対応させていただきます。みなさんが語学を学び、それを好きになってくれることが私の一番の喜びです。こちらから訪問することも可能ですし、私の家でレッスンすることも可能です。都度ご希望に合わせて対応いたします。',
+    b4: 'みなさんからのご連絡を心よりお待ちしております♪'
   },
   //Course Section
-  courseTitle: 'What I do',
-  courseSub: 'in Italian, English, German, Japanese',
+  courseTitle: 'お手伝いできること',
+  courseSub: '-日・英・独・伊-',
   card: {
-    b1: 'Language\nLessons',
-    b2: 'Translations',
-    b3: 'Interpreting',
-    b4: 'Cooking\nClass'
+    b1: '言語\nレッスン',
+    b2: '通訳',
+    b3: '翻訳',
+    b4: '料理\n教室'
   },
   //Contact Section
   contactIntro: 'お気軽にご連絡ください。'

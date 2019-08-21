@@ -214,6 +214,12 @@
         white-space: pre-wrap;
         line-height: 1.1;
         cursor: pointer;
+        @include respond("tab") {
+          font-size: 1.7rem;
+        }
+        @include respond("pc") {
+          font-size: 1.9rem;
+        }
       }
 
       &-contact {
@@ -270,7 +276,7 @@
       width: 100%;
       background: rgba(#e8e9aa, 0.8);
       color: #2176ff;
-      padding: 2rem 1.4rem 1rem;
+      padding: 2rem 2.4rem 1rem;
       @include respond("tab") {
         padding: 4rem 2.4rem 3rem;
       }
@@ -293,10 +299,9 @@
 
       &-sub {
         font-size: 2.5rem;
-        margin-left: 3rem;
         margin-top: 1.4rem;
         @include respond("pc") {
-          font-size: 3.2rem;
+          font-size: 3rem;
           margin-left: 0;
         }
       }
@@ -385,10 +390,11 @@
       }
       @include respond("pc") {
         grid-template-rows: repeat(2, auto);
-        grid-template-columns: 1fr 492px;
+        grid-template-columns: minmax(min-content, max-content) 492px;
         grid-gap: 1.6rem 4.2rem;
         align-items: center;
-        padding: 0 5% 0 11%;
+        justify-content: space-evenly;
+        padding: 0 5% 0 10%;
       }
 
       &-title {
