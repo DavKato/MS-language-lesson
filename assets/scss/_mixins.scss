@@ -1,34 +1,5 @@
 //////
 //Media Queries
-//Desktop first
-@mixin respond($breakpoint) {
-  @if $breakpoint == iphoneX {
-    @media only screen and (max-width: 460px) and (max-aspect-ratio: 1/2) {
-      @content;
-    }
-  }
-  @if $breakpoint == mobile {
-    @media only screen and (max-width: 460px) {
-      @content;
-    }
-  }
-  @if $breakpoint == tab {
-    @media only screen and (max-width: 768px) {
-      @content;
-    }
-  }
-  @if $breakpoint == big-scr {
-    @media only screen and (min-width: 1800px) {
-      @content;
-    }
-  }
-  @if $breakpoint == long-scr {
-    @media only screen and (max-aspect-ratio: 1/1) {
-      @content;
-    }
-  }
-}
-
 //Mobile First
 @mixin respond($breakpoint) {
   @if $breakpoint == iphoneX {
@@ -36,13 +7,18 @@
       @content;
     }
   }
-  @if $breakpoint == tab {
+  @if $breakpoint == mobile {
     @media only screen and (min-width: 461px) {
       @content;
     }
   }
+  @if $breakpoint == tab {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
   @if $breakpoint == pc {
-    @media only screen and (min-width: 769px) {
+    @media only screen and (min-width: 900px) {
       @content;
     }
   }
@@ -53,6 +29,12 @@
   }
   @if $breakpoint == long-scr {
     @media only screen and (min-width: 461px) and (max-aspect-ratio: 1/1) {
+      @content;
+    }
+  }
+  //for CSS images
+  @if $breakpoint == xx {
+    @media only screen and (min-resolution: 192dpi) {
       @content;
     }
   }

@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-template-simple",
+  "name": "marina",
   "version": "1.0.0",
-  "description": "A simple Nuxt.js template",
+  "description": "Marina's language and cooking lesson",
   "author": "Davide Kato",
   "private": true,
   "scripts": {

@@ -1,38 +1,33 @@
 <template>
-  <div>
-    <nuxt />
-  </div>
+  <nuxt />
 </template>
-
-<style>
-</style>
 
 <script>
 export default {
   head() {
-    const i18nSeo = this.$nuxtI18nSeo()
-    const pageDesc = this.$t('desc.default')
-    const mainTitle = this.$t('title.default')
-    // const url = "ADD_PRODUCTION_URL";
+    const i18nSeo = this.$nuxtI18nSeo();
+    const pageDesc = this.$t("desc.default");
+    const mainTitle = this.$t("title.default");
+    const url = "ADD_PRODUCTION_URL";
     return {
-      titleTemplate: `%s | ${mainTitle}`,
+      titleTemplate: mainTitle,
       htmlAttrs: { ...i18nSeo.htmlAttrs },
       meta: [
-        { hid: 'charset', charset: 'utf-8' },
+        { hid: "charset", charset: "utf-8" },
         {
-          name: 'viewport',
-          hid: 'viewport',
-          content: 'width=device-width, initial-scale=1'
+          name: "viewport",
+          hid: "viewport",
+          content: "width=device-width, initial-scale=1"
         },
-        { 'http-equiv': 'x-ua-compatible', content: 'ie=edge' },
+        { "http-equiv": "x-ua-compatible", content: "ie=edge" },
         {
-          name: 'format-detection',
-          hid: 'format-detection',
-          content: 'telephone=no, email=no, address=no'
+          name: "format-detection",
+          hid: "format-detection",
+          content: "telephone=no, email=no, address=no"
         },
         {
-          hid: 'description',
-          name: 'description',
+          hid: "description",
+          name: "description",
           content: pageDesc
         },
         // { hid: 'og:title', property: 'og:title', content: mainTitle },
@@ -53,8 +48,8 @@ export default {
         ...i18nSeo.meta
       ],
       link: [...i18nSeo.link]
-    }
+    };
   }
-}
+};
 </script>
 

@@ -1,16 +1,5 @@
 ////////////////
 //PAGE && LAYOUT ANIMATION
-
-.layout-enter,
-.layout-leave-to {
-  opacity: 0;
-  transform: translate3D(0, 10rem, 0);
-}
-.layout-enter-active,
-.layout-leave-active {
-  transition: opacity 0.4s ease-out, transform 0.5s;
-}
-
 .page-enter-active {
   transition: opacity 0.3s ease-out;
 }
@@ -34,6 +23,12 @@
 
 html {
   font-size: 62.5%;
+  @include respond('tab') {
+    font-size: 67.5%;
+  }
+  @include respond('pc') {
+    font-size: 70%;
+  }
 }
 
 body {
@@ -43,13 +38,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  color: #222;
+  color: $black-p;
 }
 
 h1,
 h2,
 h3 {
   font-family: $font-h;
-  font-weight: 500;
-  color: $black-d;
+  font-weight: 600;
+  line-height: 1.1;
 }

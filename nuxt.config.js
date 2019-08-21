@@ -1,75 +1,75 @@
-import i18n from './locale/i18n-config'
+import i18n from './locale/i18n-config';
 
-const imgDir = '/img/'
+const imgDir = '/img/';
 
 export default {
   mode: 'universal',
 
-  // head: {
-  // link: [
-  //   {
-  //     rel: 'icon',
-  //     sizes: '16x16',
-  //     type: 'image/png',
-  //     href: imgDir + 'favicon16.png'
-  //   },
-  //   {
-  //     rel: 'icon',
-  //     sizes: '32x32',
-  //     type: 'image/png',
-  //     href: imgDir + 'favicon32.png'
-  //   },
-  //   {
-  //     rel: 'icon',
-  //     sizes: '64x64',
-  //     type: 'image/png',
-  //     href: imgDir + 'favicon64.png'
-  //   },
-  //   {
-  //     rel: 'apple-touch-icon',
-  //     sizes: '64x64',
-  //     type: 'image/png',
-  //     href: imgDir + 'apple-touch180.png'
-  //   },
-  //   //Chrome for Android
-  //   {
-  //     rel: 'icon',
-  //     sizes: '192x192',
-  //     type: 'image/png',
-  //     href: imgDir + 'favicon192.png'
-  //   },
-  // //  FOR EXTERNAL STYLESHEET LIKE GOOGLE FONTS
-  //   {
-  //     rel: 'stylesheet',
-  //     href:
-  //       'https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap'
-  //   }
-  // ]
-  // },
-  ////  MANIFEST ICON 1024*1024 PNG
-  // icon: {
-  //   iconFileName: 'images/icon-manifest.png'
-  // },
+  head: {
+    link: [
+      {
+        rel: 'icon',
+        sizes: '16x16',
+        type: 'image/png',
+        href: imgDir + 'favicon16.png'
+      },
+      {
+        rel: 'icon',
+        sizes: '32x32',
+        type: 'image/png',
+        href: imgDir + 'favicon32.png'
+      },
+      {
+        rel: 'icon',
+        sizes: '64x64',
+        type: 'image/png',
+        href: imgDir + 'favicon64.png'
+      },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        type: 'image/png',
+        href: imgDir + 'apple-touch180.png'
+      },
+      //Chrome for Android
+      {
+        rel: 'icon',
+        sizes: '192x192',
+        type: 'image/png',
+        href: imgDir + 'favicon192.png'
+      }
+      //  FOR EXTERNAL STYLESHEET LIKE GOOGLE FONTS
+      // {
+      //   rel: 'stylesheet',
+      //   href:
+      //     'https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap'
+      // }
+    ]
+  },
+  //  MANIFEST ICON 1024*1024 PNG
+  icon: {
+    iconFileName: 'img/icon-manifest.png'
+  },
 
   loading: false,
 
   css: ['@assets/scss/main.scss'],
 
   manifest: {
-    name: 'APP NAME',
-    short_name: 'SHORT NAME',
+    name: "Marina's Lesson",
+    short_name: 'M-Lesson',
     theme_color: '#6180aa'
   },
 
-  plugins: [],
+  plugins: ['~/plugins/breakpoints.js', '~/plugins/vueScreenSize.js'],
 
   modules: [
     '@nuxtjs/style-resources',
     'vue-scrollto/nuxt',
     '@nuxtjs/pwa',
-    '@nuxtjs/google-analytics',
-    ['nuxt-i18n', i18n],
-    '@nuxtjs/sitemap'
+    // '@nuxtjs/google-analytics',
+    ['nuxt-i18n', i18n]
+    // '@nuxtjs/sitemap'
   ],
 
   // googleAnalytics: {
@@ -100,9 +100,9 @@ export default {
     ]
   },
 
-  // styleResources: {
-  //   scss: ['@assets/scss/_variables.scss', '@assets/scss/_mixins.scss']
-  // },
+  styleResources: {
+    scss: ['@assets/scss/_variables.scss', '@assets/scss/_mixins.scss']
+  },
 
   build: {
     extend(config, ctx) {},
@@ -121,4 +121,4 @@ export default {
   },
 
   ssr: false
-}
+};
