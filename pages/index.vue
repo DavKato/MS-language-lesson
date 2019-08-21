@@ -144,12 +144,19 @@
       </section>
 
       <section id="contact">
-        <img
-          class="contact-bg"
-          src="~/assets/img/1x/tree.png"
-          srcset="~/assets/img/2x/tree.png 2x, ~/assets/img/3x/tree.png 3x"
-          alt
-        />
+        <picture>
+          <source
+            :media="`(min-width: ${$data.$pc}px)`"
+            srcset="~/assets/img/pc/1x/tree.png 1440w, ~/assets/img/pc/2x/tree.png 2880w"
+            sizes="100vw"
+          />
+          <img
+            class="contact-bg"
+            src="~/assets/img/1x/tree.png"
+            srcset="~/assets/img/2x/tree.png 2x, ~/assets/img/3x/tree.png 3x"
+            alt
+          />
+        </picture>
         <div class="title contact-title">
           <img
             class="title-leaf contact-title-leaf"
@@ -269,6 +276,7 @@
       }
       @include respond("pc") {
         width: 70%;
+        min-width: 860px;
         text-align: right;
         padding: 3.4rem 4rem;
       }
