@@ -223,7 +223,7 @@
       }
 
       &-contact {
-        height: 3rem;
+        height: 2.4rem;
         object-fit: contain;
         cursor: pointer;
         transition: transform 0.2s, filter 0.2s;
@@ -239,6 +239,7 @@
         @include respond("tab") {
           margin-left: 7.5rem;
           margin-right: auto;
+          height: 3rem;
         }
       }
     }
@@ -587,14 +588,14 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      padding: 5rem 1rem 0;
+      padding-top: 5rem;
 
       @include respond("tab") {
-        padding: 8rem 1rem 0;
+        padding-top: 8rem;
       }
       @include respond("pc") {
         height: 94vh;
-        padding: 11rem 1rem 0;
+        padding-top: 11rem;
       }
       .contact {
         &-bg {
@@ -642,12 +643,12 @@
 
           &-intro {
             font-size: 1.5rem;
-            letter-spacing: 1px;
             @include respond("tab") {
               font-size: 1.7rem;
             }
             @include respond("pc") {
               font-size: 2.8rem;
+              letter-spacing: 1px;
             }
           }
           &-address {

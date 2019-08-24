@@ -38,12 +38,6 @@ export default {
         type: 'image/png',
         href: imgDir + 'favicon192.png'
       }
-      //  FOR EXTERNAL STYLESHEET LIKE GOOGLE FONTS
-      // {
-      //   rel: 'stylesheet',
-      //   href:
-      //     'https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap'
-      // }
     ]
   },
   //  MANIFEST ICON 1024*1024 PNG
