@@ -43,7 +43,7 @@ export default {
     unit2: 'word',
     unit3: 'lesson',
     note1: 'per person,\nat my home',
-    note2: 'applies to the source words',
+    note2: 'applies to the\nsource words',
     note3: '+ extra fees if needed,\nfrom 2 hours',
     note4: '+ ingredients fees,\nper person,\nat my home'
   },
