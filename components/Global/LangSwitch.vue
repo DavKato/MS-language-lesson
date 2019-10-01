@@ -16,6 +16,22 @@
         title="Switch language to English"
       />
     </nuxt-link>
+    <nuxt-link :to="switchLocalePath('de')" tabindex="0" class="link">
+      <img
+        src="~/assets/img/1x/german.png"
+        srcset="~/assets/img/2x/german.png 2x, ~/assets/img/3x/german.png 3x"
+        alt="Switch language to German"
+        title="Switch language to German"
+      />
+    </nuxt-link>
+    <nuxt-link :to="switchLocalePath('it')" tabindex="0" class="link">
+      <img
+        src="~/assets/img/1x/italian.png"
+        srcset="~/assets/img/2x/italian.png 2x, ~/assets/img/3x/italian.png 3x"
+        alt="Switch language to Italian"
+        title="Switch language to Italian"
+      />
+    </nuxt-link>
   </div>
 </template>
 

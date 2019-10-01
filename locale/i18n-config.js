@@ -9,6 +9,16 @@ export default {
       code: 'ja',
       iso: 'ja-JP',
       file: 'ja-JP.js'
+    },
+    {
+      code: 'it',
+      iso: 'it-IT',
+      file: 'it-IT.js'
+    },
+    {
+      code: 'de',
+      iso: 'de-DE',
+      file: 'de-DE.js'
     }
   ],
   defaultLocale: 'en',

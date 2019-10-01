@@ -5,7 +5,7 @@ Vue.mixin({
     return {
       $mobile: 460,
       $tab: 768,
-      $pc: 900,
+      $pc: 980,
       $bigScr: 1800
     };
   }
