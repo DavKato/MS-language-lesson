@@ -1,12 +1,8 @@
 export default {
   // Head Meta
-  title: {
-    default: 'Marina Soranzo | Lezioni di Lingua/Cucina a Monaco'
-  },
-  desc: {
-    default:
-      'Lezioni Private di Lingua (Italiano,  Tedesco e Giapponese) e di Cucina Italiana Casalinga'
-  },
+  title: 'Marina Soranzo | Lezioni di Lingua/Cucina a Monaco',
+  desc:
+    'Lezioni Private di Lingua (Italiano,  Tedesco e Giapponese) e di Cucina Italiana Casalinga',
   // Header section
   navTitle: 'Lingua / Cucina,\nTraduzioni e Interprete',
   heroTitle: {

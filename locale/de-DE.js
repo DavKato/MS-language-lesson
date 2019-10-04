@@ -1,12 +1,8 @@
 export default {
   // Head Meta
-  title: {
-    default: 'Marina Soranzo | Spriwch- und Kochkurs in München'
-  },
-  desc: {
-    default:
-      'Privatkurse für Sprachen - Italienisch, Deutsch und Japanisch.- und Italienische Küche'
-  },
+  title: 'Marina Soranzo | Spriwch- und Kochkurs in München',
+  desc:
+    'Privatkurse für Sprachen - Italienisch, Deutsch und Japanisch.- und Italienische Küche',
   // Header section
   navTitle: 'Sprachunterricht / Kochkurs,\nÜbersetzungen und Dolmetschen',
   heroTitle: {

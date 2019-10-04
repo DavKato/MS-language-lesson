@@ -24,9 +24,10 @@ export default {
   defaultLocale: 'en',
   strategy: 'prefix_and_default',
   detectBrowserLanguage: {
+    alwaysRedirect: true,
+    cookieKey: 'lang',
     fallbackLocale: 'en'
   },
-  seo: false,
   lazy: true,
   langDir: 'locale/'
 };

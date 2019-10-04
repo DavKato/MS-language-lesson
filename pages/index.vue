@@ -6,12 +6,12 @@
         class="nav-top-text"
         title="scroll to top"
       >{{ $t('navTitle')}}</p>
-      <ContactLink class="nav-top-contact" />
-      <LangSwitch v-show="$vssWidth >= $data.$tab" />
+      <contact-link class="nav-top-contact" />
+      <lang-switch v-show="$vssWidth >= $data.$tab" />
 
-      <no-ssr>
+      <client-only>
         <div class="ie" v-if="ie">{{ $t('ie') }}</div>
-      </no-ssr>
+      </client-only>
     </nav>
 
     <header class="header">
@@ -45,7 +45,7 @@
     <main class="main">
       <section class="about">
         <div class="title about-title">
-          <no-ssr>
+          <client-only>
             <img
               v-if="$vssWidth >= $data.$tab"
               class="title-leaf"
@@ -53,7 +53,7 @@
               srcset="~/assets/img/2x/leaf-y.png 2x, ~/assets/img/3x/leaf-y.png 3x"
               alt
             />
-          </no-ssr>
+          </client-only>
           <h2 class="title-prime">{{ $t('aboutTitle') }}</h2>
           <!-- <p class="title-sub">{{ $t('aboutSub') }}</p> -->
         </div>
@@ -101,7 +101,7 @@
         </div>
 
         <div class="course-cards">
-          <no-ssr>
+          <client-only>
             <img
               v-if="$vssWidth < $data.$tab"
               class="course-cards-flower"
@@ -109,7 +109,7 @@
               srcset="~/assets/img/2x/flower.png 2x, ~/assets/img/3x/flower.png 3x"
               alt
             />
-          </no-ssr>
+          </client-only>
 
           <div class="card" @mouseenter="hover0 = true" @mouseleave="hover0 = false">
             <div class="card-side card-side__front" :class="{'card-hovered-front': hover0}">
@@ -348,13 +348,19 @@
   }
   &-prime {
     font-size: 2.3rem;
+    width: 10rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: visible;
 
     @include respond("tab") {
-      font-size: 2.7rem;
+      font-size: 2.9rem;
       line-height: 1.3;
+      width: 12rem;
     }
     @include respond("pc") {
       font-size: 3.2rem;
+      width: 19rem;
     }
   }
 }
@@ -594,7 +600,7 @@
 
     @include respond("tab") {
       grid-template-columns: repeat(3, calc(12rem + 10vw));
-      margin: 4rem auto 7rem;
+      margin: 5rem auto 7rem;
     }
     @include respond("pc") {
       grid-template-rows: repeat(2, calc(12rem + 12vw));
@@ -777,7 +783,8 @@
     @include respond("pc") {
       margin-left: 15%;
       & > h2 {
-        font-size: 3.9rem;
+        text-align: left;
+        font-size: 3.8rem;
       }
       &-leaf {
         top: -13rem;
@@ -889,8 +896,8 @@
 </style>
 
 <script>
-import ContactLink from "~/components/Global/ContactLink";
-import LangSwitch from "~/components/Global/LangSwitch";
+import ContactLink from "~/components/ContactLink";
+import LangSwitch from "~/components/LangSwitch";
 export default {
   data() {
     return {

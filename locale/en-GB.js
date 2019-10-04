@@ -1,12 +1,8 @@
 export default {
   // Head Meta
-  title: {
-    default: 'Marina Soranzo | Language/Cooking Lessons in Munich'
-  },
-  desc: {
-    default:
-      'Japanese/Italian/German Private Language and Cooking Lessons in Munich.'
-  },
+  title: 'Marina Soranzo | Language/Cooking Lessons in Munich',
+  desc:
+    'Japanese/Italian/German Private Language and Cooking Lessons in Munich.',
   // Header section
   navTitle: 'Language / Cooking,\nTranslations and Interpreting',
   heroTitle: {

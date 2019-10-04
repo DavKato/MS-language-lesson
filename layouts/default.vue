@@ -30,21 +30,21 @@ export default {
           name: "description",
           content: pageDesc
         },
-        { hid: "og:title", property: "og:title", content: mainTitle },
-        { hid: "og:type", property: "og:type", content: "website" },
-        { hid: "og:site_name", property: "og:site_name", content: mainTitle },
-        { hid: "og:url", property: "og:url", content: url },
-        {
-          hid: "og:description",
-          property: "og:description",
-          content: pageDesc
-        },
-        {
-          hid: "og:image",
-          property: "og:image",
-          content: url + "img/thumbnail.jpg"
-        },
-        { name: "twitter:card", content: "summary_large_image" },
+        // { hid: "og:title", property: "og:title", content: mainTitle },
+        // { hid: "og:type", property: "og:type", content: "website" },
+        // { hid: "og:site_name", property: "og:site_name", content: mainTitle },
+        // { hid: "og:url", property: "og:url", content: url },
+        // {
+        //   hid: "og:description",
+        //   property: "og:description",
+        //   content: pageDesc
+        // },
+        // {
+        //   hid: "og:image",
+        //   property: "og:image",
+        //   content: url + "img/thumbnail.jpg"
+        // },
+        // { name: "twitter:card", content: "summary_large_image" },
         ...i18nSeo.meta
       ],
       link: [...i18nSeo.link]

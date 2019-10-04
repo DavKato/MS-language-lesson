@@ -50,8 +50,8 @@ export default {
   css: ['@assets/scss/main.scss'],
 
   manifest: {
-    name: "Marina's Lesson",
-    short_name: 'M-Lesson',
+    name: 'Marina Soranzo',
+    short_name: 'M・Soranzo',
     theme_color: '#6180aa'
   },
 
