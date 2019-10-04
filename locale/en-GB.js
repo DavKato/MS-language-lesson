@@ -14,7 +14,7 @@ export default {
     mobile: 'Language Lessons\nCooking Classes\nTranslations\nInterpreting'
   },
   heroSub: {
-    pc: 'for Italian, English, German and Japanese in Munich',
+    pc: 'for Italian, German and Japanese in Munich',
     mobile: 'in Munich'
   },
   //About Section
@@ -27,13 +27,13 @@ export default {
     b2:
       'My name is Marina Soranzo and I teach Italian, German and Japanese with long teaching experience in Kyoto and Sendai, Japan (Culture Institute Kyoto, Tohoku University, Miyagi Gakuin Women University, private language schools, High Schools) and Germany (München).\nI also give private lessons, at home or in companies.',
     b3:
-      'Translating and interpreting experience in Japan at sport events like Football World Cup 2002, Superbike, business negotiations, museum expositions, politic meetings and events, and in Germany (business).',
+      'Translating and interpreting experience in Japan at sport events like Football World Cup 2002, Superbike, business negotiations, museum expositions, political meetings and events, and in Germany (business).',
     b4:
       'Flexibility, patience and motivation are some of the qualities I can offer.\nI enjoy helping others to learn a language and come to like it!\nWe can learn at my or your house, or elsewhere, just as it’s suitable each time.',
     b5: 'I am looking forward to you mailing me!'
   },
   //Course Section
-  courseTitle: 'Price Examples',
+  courseTitle: 'Fees',
   card: {
     b1: 'Language\nLessons',
     b2: 'Translations',
@@ -45,9 +45,13 @@ export default {
     note1: 'per person,\nat my home',
     note2: 'applies to the\nsource words',
     note3: '+ extra fees if needed,\nfrom 2 hours',
-    note4: '+ ingredients fees,\nper person,\nat my home'
+    note4: '+ ingredients costs,\nper person,\nat my home'
   },
   //Contact Section
   contactTitle: 'Contact',
-  contactIntro: 'Please feel free to contact me😃'
+  contactIntro: 'Please feel free to contact me😃',
+
+  //NO-IE
+  ie:
+    'This website does not support Internet Explorer.\nPlease use other web browsers like Edge, Chrome or Safari.'
 };

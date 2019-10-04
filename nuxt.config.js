@@ -110,7 +110,6 @@ export default {
   },
 
   generate: {
-    routes: ['/ja', '/it', '/de'],
     subFolder: false
   },
 

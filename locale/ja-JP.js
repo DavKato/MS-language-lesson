@@ -49,5 +49,9 @@ export default {
   },
   //Contact Section
   contactTitle: 'Contact',
-  contactIntro: 'お気軽にご連絡ください😃'
+  contactIntro: 'お気軽にご連絡ください😃',
+
+  //NO-IE
+  ie:
+    'このウェブサイトはInternet Explorerをサポートしていません。\nEdgeやChrome、Safariなど他ブラウザをご利用ください。'
 };

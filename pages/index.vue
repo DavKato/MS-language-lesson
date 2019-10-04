@@ -8,6 +8,10 @@
       >{{ $t('navTitle')}}</p>
       <ContactLink class="nav-top-contact" />
       <LangSwitch v-show="$vssWidth >= $data.$tab" />
+
+      <no-ssr>
+        <div class="ie" v-if="ie">{{ $t('ie') }}</div>
+      </no-ssr>
     </nav>
 
     <header class="header">
@@ -107,12 +111,12 @@
             />
           </no-ssr>
 
-          <div class="card">
-            <div class="card-side card-side__front">
+          <div class="card" @mouseenter="hover0 = true" @mouseleave="hover0 = false">
+            <div class="card-side card-side__front" :class="{'card-hovered-front': hover0}">
               <h3 class="card-title card-title-front">{{ $t('card.b1') }}</h3>
               <span class="card-yellow-line"></span>
             </div>
-            <div class="card-side card-side__back">
+            <div class="card-side card-side__back" :class="{'card-hovered-back': hover0}">
               <div class="card-desc">
                 <h4 class="card-desc-price">
                   <b>40€</b>
@@ -123,12 +127,12 @@
             </div>
           </div>
 
-          <div class="card">
-            <div class="card-side card-side__front">
+          <div class="card" @mouseover="hover1 = true" @mouseleave="hover1 = false">
+            <div class="card-side card-side__front" :class="{'card-hovered-front': hover1}">
               <h3 class="card-title card-title-front">{{ $t('card.b2') }}</h3>
               <span class="card-yellow-line"></span>
             </div>
-            <div class="card-side card-side__back">
+            <div class="card-side card-side__back" :class="{'card-hovered-back': hover1}">
               <div class="card-desc">
                 <h4 class="card-desc-price">
                   <b>0.2€</b>
@@ -139,8 +143,13 @@
             </div>
           </div>
 
-          <div class="card" v-show="$vssWidth >= $data.$tab">
-            <div class="card-side card-side__front">
+          <div
+            class="card"
+            v-show="$vssWidth >= $data.$tab"
+            @mouseover="hover2 = true"
+            @mouseleave="hover2 = false"
+          >
+            <div class="card-side card-side__front" :class="{'card-hovered-front': hover2}">
               <img
                 class="card-flowers card-flowers-1"
                 src="~/assets/img/pc/1x/flower.png"
@@ -149,7 +158,10 @@
                 alt
               />
             </div>
-            <div class="card-side card-side__back card-side__back">
+            <div
+              class="card-side card-side__back card-side__back"
+              :class="{'card-hovered-back': hover2}"
+            >
               <img
                 class="card-back"
                 src="~/assets/img/pc/1x/class.png"
@@ -160,8 +172,13 @@
             </div>
           </div>
 
-          <div class="card" v-show="$vssWidth >= $data.$tab">
-            <div class="card-side card-side__front">
+          <div
+            class="card"
+            v-show="$vssWidth >= $data.$tab"
+            @mouseover="hover3 = true"
+            @mouseleave="hover3 = false"
+          >
+            <div class="card-side card-side__front" :class="{'card-hovered-front': hover3}">
               <img
                 class="card-flowers card-flowers-2"
                 src="~/assets/img/pc/1x/flower.png"
@@ -170,7 +187,10 @@
                 alt
               />
             </div>
-            <div class="card-side card-side__back card-side__back">
+            <div
+              class="card-side card-side__back card-side__back"
+              :class="{'card-hovered-back': hover3}"
+            >
               <img
                 class="card-back"
                 src="~/assets/img/pc/1x/lasagna.png"
@@ -181,12 +201,12 @@
             </div>
           </div>
 
-          <div class="card">
-            <div class="card-side card-side__front">
+          <div class="card" @mouseover="hover4 = true" @mouseleave="hover4 = false">
+            <div class="card-side card-side__front" :class="{'card-hovered-front': hover4}">
               <h3 class="card-title card-title-front">{{ $t('card.b3') }}</h3>
               <span class="card-yellow-line"></span>
             </div>
-            <div class="card-side card-side__back">
+            <div class="card-side card-side__back" :class="{'card-hovered-back': hover4}">
               <div class="card-desc">
                 <h4 class="card-desc-price">
                   <b>50€</b>
@@ -197,12 +217,12 @@
             </div>
           </div>
 
-          <div class="card">
-            <div class="card-side card-side__front">
+          <div class="card" @mouseover="hover5 = true" @mouseleave="hover5 = false">
+            <div class="card-side card-side__front" :class="{'card-hovered-front': hover5}">
               <h3 class="card-title card-title-front">{{ $t('card.b4') }}</h3>
               <span class="card-yellow-line"></span>
             </div>
-            <div class="card-side card-side__back">
+            <div class="card-side card-side__back" :class="{'card-hovered-back': hover5}">
               <div class="card-desc">
                 <h4 class="card-desc-price">
                   <b>40€</b>
@@ -534,12 +554,15 @@
       font-size: 1.5rem;
       white-space: pre-wrap;
       line-height: 2;
+      letter-spacing: 0.1px;
       @include respond("tab") {
         font-size: 1.7rem;
         line-height: 1.5;
+        letter-spacing: 0.2px;
       }
       @include respond("pc") {
-        font-size: 2rem;
+        font-size: 1.9rem;
+        letter-spacing: 0.4px;
       }
 
       &:not(:last-child) {
@@ -619,10 +642,10 @@
     }
   }
 
-  &:hover .card-side__front {
+  &-hovered-front {
     transform: rotateY(180deg);
   }
-  &:hover .card-side__back {
+  &-hovered-back {
     transform: rotateY(0deg);
   }
 
@@ -666,8 +689,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    &-1 {
-    }
     &-2 {
       transform: translate(-50%, -50%) rotateX(180deg);
     }
@@ -713,8 +734,7 @@
   }
 }
 
-.card-side__front::after,
-.card-side__back::after {
+.card-side::after {
   content: "";
   width: 92%;
   height: 92%;
@@ -852,12 +872,37 @@
     margin: 1rem 0 2rem;
   }
 }
+
+//NO SCRIPT, NO IE
+////////////////////////////////////
+.ie {
+  position: absolute;
+  bottom: -6rem;
+  right: 1rem;
+  white-space: pre-wrap;
+  border: 1px solid #333;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem 1.4rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+}
 </style>
 
 <script>
 import ContactLink from "~/components/Global/ContactLink";
 import LangSwitch from "~/components/Global/LangSwitch";
 export default {
+  data() {
+    return {
+      ie: false,
+      hover0: false,
+      hover1: false,
+      hover2: false,
+      hover3: false,
+      hover4: false,
+      hover5: false
+    };
+  },
   computed: {
     title() {
       return this.$vssWidth >= this.$data.$tab
@@ -873,6 +918,14 @@ export default {
   components: {
     ContactLink,
     LangSwitch
+  },
+  mounted() {
+    const ua = window.navigator.userAgent;
+    const isIE = /MSIE|Trident/.test(ua);
+
+    if (isIE) {
+      this.ie = true;
+    }
   }
 };
 </script>
