@@ -49,5 +49,5 @@ export default {
 
   //NO-IE
   ie:
-    'このウェブサイトはInternet Explorerをサポートしていません。\nEdgeやChrome、Safariなど他ブラウザをご利用ください。'
+    'このウェブサイトはInternet Explorerをサポートしておりません。\nEdgeやChrome、Safariなど他ブラウザをご利用ください。'
 };

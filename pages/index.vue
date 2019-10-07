@@ -18,12 +18,12 @@
       <picture>
         <source
           :media="`(min-width: ${$data.$pc}px)`"
-          srcset="~/assets/img/pc/1x/apple.png 1440w, ~/assets/img/pc/2x/apple.png 2880w"
+          srcset="~/assets/img/pc/1x/apple.jpg 1440w, ~/assets/img/pc/2x/apple.jpg 2880w"
           sizes="100vw"
         />
         <img
-          src="~/assets/img/1x/apple.png"
-          srcset="~/assets/img/2x/apple.png 2x, ~/assets/img/3x/apple.png 3x"
+          src="~/assets/img/1x/apple.jpg"
+          srcset="~/assets/img/2x/apple.jpg 2x, ~/assets/img/3x/apple.jpg 3x"
           alt
           class="header-bg-top"
         />
@@ -61,11 +61,11 @@
         <picture class="about-img">
           <source
             :media="`(min-width: ${$data.$pc}px)`"
-            srcset="~/assets/img/pc/1x/marina.png 1x, ~/assets/img/pc/2x/marina.png 2x"
+            srcset="~/assets/img/pc/1x/marina.jpg 1x, ~/assets/img/pc/2x/marina.jpg 2x"
           />
           <img
-            src="~/assets/img/1x/marina.png"
-            srcset="~/assets/img/1x/marina.png 415w, ~/assets/img/2x/marina.png 830w, ~/assets/img/3x/marina.png 1245w"
+            src="~/assets/img/1x/marina.jpg"
+            srcset="~/assets/img/1x/marina.jpg 415w, ~/assets/img/2x/marina.jpg 830w, ~/assets/img/3x/marina.jpg 1245w"
             sizes="(max-width: 600) 100vw, 600px"
             alt="Marina's picture in Shibuya"
             title="Marina's picture in Shibuya"
@@ -164,8 +164,8 @@
             >
               <img
                 class="card-back"
-                src="~/assets/img/pc/1x/class.png"
-                srcset="~/assets/img/pc/1x/class.png 266w, ~/assets/img/pc/2x/class.png 532w"
+                src="~/assets/img/pc/1x/class.jpg"
+                srcset="~/assets/img/pc/1x/class.jpg 266w, ~/assets/img/pc/2x/class.jpg 532w"
                 sizes="266px"
                 alt
               />
@@ -193,8 +193,8 @@
             >
               <img
                 class="card-back"
-                src="~/assets/img/pc/1x/lasagna.png"
-                srcset="~/assets/img/pc/1x/lasagna.png 266w, ~/assets/img/pc/2x/lasagna.png 532w"
+                src="~/assets/img/pc/1x/lasagna.jpg"
+                srcset="~/assets/img/pc/1x/lasagna.jpg 266w, ~/assets/img/pc/2x/lasagna.jpg 532w"
                 sizes="266px"
                 alt
               />
@@ -239,13 +239,13 @@
         <picture>
           <source
             :media="`(min-width: ${$data.$pc}px)`"
-            srcset="~/assets/img/pc/1x/tree.png 1440w, ~/assets/img/pc/2x/tree.png 2880w"
+            srcset="~/assets/img/pc/1x/tree.jpg 1440w, ~/assets/img/pc/2x/tree.jpg 2880w"
             sizes="100vw"
           />
           <img
             class="contact-bg"
-            src="~/assets/img/1x/tree.png"
-            srcset="~/assets/img/2x/tree.png 2x, ~/assets/img/3x/tree.png 3x"
+            src="~/assets/img/1x/tree.jpg"
+            srcset="~/assets/img/2x/tree.jpg 2x, ~/assets/img/3x/tree.jpg 3x"
             alt
           />
         </picture>
@@ -737,6 +737,7 @@
 
   &-back {
     width: 82%;
+    border-radius: 50%;
   }
 }
 
@@ -764,7 +765,7 @@
     padding-top: 8rem;
   }
   @include respond("pc") {
-    height: 94vh;
+    min-height: 94vh;
     padding-top: 11rem;
   }
 }
