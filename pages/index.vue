@@ -1,5 +1,10 @@
 <template>
   <div id="top">
+    <div
+      id="initialCover"
+      style="width:100vw;height:100vh;background-color:#fff;position:fixed;top:0;left:0;z-index:2000;"
+    ></div>
+
     <nav class="nav nav-top">
       <p
         v-scroll-to="{ el: '#top', duration: 500 }"
@@ -923,7 +928,7 @@
 <script>
 import ContactLink from "~/components/ContactLink";
 import LangSwitch from "~/components/LangSwitch";
-import { TimelineMax } from "gsap";
+import { TimelineLite } from "gsap";
 export default {
   data() {
     return {
@@ -954,13 +959,20 @@ export default {
   },
   methods: {
     intro() {
-      const tl = new TimelineMax();
-      tl.from(".hero", 0.8, { x: -1800 })
+      // this.lockScroll();
+      document.body.style.overflow = "hidden";
+      const tl = new TimelineLite({
+        onComplete: () => {
+          document.body.style.overflow = "visible";
+        }
+      });
+      tl.to("#initialCover", 0.3, { display: "none" })
+        .from(".hero", 0.5, { x: -1800 })
         .from(".hero-title", 0.4, { y: -1200, ease: Back.easeOut.config(1.4) })
-        .from(".hero-sub", 0.6, { x: 2000, ease: Power2.easeOut }, "-=0.2")
-        .from(".header-bg-top", 2, { opacity: 0, ease: Power2.easeOut })
+        .from(".hero-sub", 0.5, { x: 4000, ease: Power2.easeOut }, "-=0.3")
+        .from(".header-bg-top", 2, { opacity: 0, ease: Power2.easeIn }, "-=0.5")
         .from(".nav", 0.2, { scaleY: 0 }, "-=1")
-        .from(".branch1", 4, { x: -1000 }, "-=1")
+        .from(".branch1", 2.6, { x: -1000 }, "-=1")
         .from(".main", 1, { autoAlpha: 0 }, "-=3");
     }
   },
@@ -977,9 +989,8 @@ export default {
         threshold: 0.15,
         scope: this.$el
       });
-
-      this.intro();
     }
+    this.intro();
   },
   destroyed() {
     if (process.client) {
