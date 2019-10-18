@@ -1,4 +1,5 @@
 export default {
+  baseUrl: 'https://marinasoranzo.com',
   locales: [
     {
       code: 'en',

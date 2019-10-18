@@ -43,7 +43,7 @@
     />
 
     <main class="main">
-      <section class="about">
+      <section class="about" data-scroll>
         <div class="title about-title">
           <client-only>
             <img
@@ -87,9 +87,10 @@
         srcset="~/assets/img/1x/branch.png 401w, ~/assets/img/2x/branch.png 802w, ~/assets/img/pc/1x/branch.png 1000w, ~/assets/img/3x/branch.png 1203w, ~/assets/img/pc/2x/branch.png 2000w"
         sizes="(max-width: 1000px) 96vw, 1000px"
         alt
+        data-scroll
       />
 
-      <section class="course">
+      <section class="course" data-scroll>
         <div class="title course-title">
           <img
             class="title-leaf"
@@ -120,7 +121,7 @@
               <div class="card-desc">
                 <h4 class="card-desc-price">
                   <b>40€</b>
-                  /{{ $t('card.unit1')}}
+                  /{{ $t('card.lesson')}}
                 </h4>
                 <p class="card-desc-note">{{ $t('card.note1') }}</p>
               </div>
@@ -135,8 +136,8 @@
             <div class="card-side card-side__back" :class="{'card-hovered-back': hover1}">
               <div class="card-desc">
                 <h4 class="card-desc-price">
-                  <b>0.2€</b>
-                  /{{ $t('card.unit2')}}
+                  <b>0.10€</b>
+                  /{{ $t('card.word')}}
                 </h4>
                 <p class="card-desc-note">{{ $t('card.note2') }}</p>
               </div>
@@ -210,7 +211,7 @@
               <div class="card-desc">
                 <h4 class="card-desc-price">
                   <b>50€</b>
-                  /{{ $t('card.unit3')}}
+                  /{{ $t('card.hour')}}
                 </h4>
                 <p class="card-desc-note">{{ $t('card.note3') }}</p>
               </div>
@@ -226,7 +227,7 @@
               <div class="card-desc">
                 <h4 class="card-desc-price">
                   <b>40€</b>
-                  /{{ $t('card.unit3')}}
+                  /{{ $t('card.lesson')}}
                 </h4>
                 <p class="card-desc-note">{{ $t('card.note4') }}</p>
               </div>
@@ -235,7 +236,7 @@
         </div>
       </section>
 
-      <section id="contact">
+      <section id="contact" data-scroll>
         <picture>
           <source
             :media="`(min-width: ${$data.$pc}px)`"
@@ -279,6 +280,25 @@
 </template>
 
 <style lang="scss" scoped>
+//Scroll Animation
+[data-scroll] {
+  transition: opacity 1s, transform 1s;
+}
+[data-scroll="in"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-scroll="out"] {
+  opacity: 0;
+  transform: translateY(6rem);
+}
+.branch2[data-scroll="out"] {
+  opacity: 1;
+  transform: translateY(0) translateX(10rem);
+}
+.branch2[data-scroll="in"] {
+  transform: translateX(0);
+}
 //kind of GLOBAL
 ////////////////////////////////////////////////////////////
 #top {
@@ -428,7 +448,7 @@
 //HEADER
 ////////////////////////////////////////////////////////
 .header {
-  height: 87vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -488,10 +508,9 @@
 //ABOUT
 /////////////////////////////////////////////////////////////
 .about {
-  margin-top: -5rem;
   display: grid;
   grid-template-rows: repeat(3, auto);
-  grid-gap: 1.6rem;
+  grid-gap: 4rem;
 
   @include respond("tab") {
     grid-gap: 4.7rem;
@@ -557,12 +576,11 @@
     }
 
     &-text {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       white-space: pre-wrap;
       line-height: 2;
       letter-spacing: 0.1px;
       @include respond("tab") {
-        font-size: 1.7rem;
         line-height: 1.5;
         letter-spacing: 0.2px;
       }
@@ -580,8 +598,12 @@
 //CARDS
 /////////////////////////////////////////////////////////////
 .course {
-  margin-top: 2rem;
+  margin-top: 20rem;
   clear: right;
+
+  @include respond("tab") {
+    margin-top: 2rem;
+  }
 
   &-title {
     @include respond("pc") {
@@ -760,9 +782,11 @@
   flex-direction: column;
   position: relative;
   padding-top: 5rem;
+  margin-top: 6rem;
 
   @include respond("tab") {
     padding-top: 8rem;
+    margin-top: 0;
   }
   @include respond("pc") {
     min-height: 94vh;
@@ -899,6 +923,7 @@
 <script>
 import ContactLink from "~/components/ContactLink";
 import LangSwitch from "~/components/LangSwitch";
+import { TimelineMax } from "gsap";
 export default {
   data() {
     return {
@@ -927,12 +952,38 @@ export default {
     ContactLink,
     LangSwitch
   },
+  methods: {
+    intro() {
+      const tl = new TimelineMax();
+      tl.from(".hero", 0.8, { x: -1800 })
+        .from(".hero-title", 0.4, { y: -1200, ease: Back.easeOut.config(1.4) })
+        .from(".hero-sub", 0.6, { x: 2000, ease: Power2.easeOut }, "-=0.2")
+        .from(".header-bg-top", 2, { opacity: 0, ease: Power2.easeOut })
+        .from(".nav", 0.2, { scaleY: 0 }, "-=1")
+        .from(".branch1", 4, { x: -1000 }, "-=1")
+        .from(".main", 1, { autoAlpha: 0 }, "-=3");
+    }
+  },
   mounted() {
     const ua = window.navigator.userAgent;
     const isIE = /MSIE|Trident/.test(ua);
 
     if (isIE) {
       this.ie = true;
+    }
+
+    if (process.client) {
+      this.so = require("scroll-out")({
+        threshold: 0.15,
+        scope: this.$el
+      });
+
+      this.intro();
+    }
+  },
+  destroyed() {
+    if (process.client) {
+      this.so.teardown();
     }
   }
 };

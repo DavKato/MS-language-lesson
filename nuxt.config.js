@@ -1,5 +1,6 @@
 import i18n from './locale/i18n-config';
 
+const url = 'https://marinasoranzo.com';
 const imgDir = '/img/';
 
 export default {
@@ -55,25 +56,24 @@ export default {
     theme_color: '#6180aa'
   },
 
-  plugins: ['~/plugins/breakpoints.js', '~/plugins/vueScreenSize.js'],
+  plugins: [
+    '~/plugins/breakpoints.js',
+    '~/plugins/vueScreenSize.js',
+    { src: '~plugins/ga.js', ssr: false }
+  ],
 
   modules: [
     '@nuxtjs/style-resources',
     'vue-scrollto/nuxt',
     '@nuxtjs/pwa',
-    // '@nuxtjs/google-analytics',
-    ['nuxt-i18n', i18n]
-    // '@nuxtjs/sitemap'
+    ['nuxt-i18n', i18n],
+    '@nuxtjs/sitemap'
   ],
 
-  // googleAnalytics: {
-  //   id: 'ADD_ID_OR_UA'
-  // },
-
-  // sitemap: {
-  //   path: '/sitemap.xml',
-  //   hostname: 'ADD_PRODUCTION_URL',
-  // },
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: url
+  },
 
   workbox: {
     runtimeCaching: [
@@ -110,7 +110,8 @@ export default {
   },
 
   generate: {
-    subFolder: false
+    subFolder: false,
+    fallback: true
   },
 
   ssr: false
