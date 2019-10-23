@@ -959,19 +959,15 @@ export default {
   },
   methods: {
     intro() {
-      // this.lockScroll();
       document.body.style.overflow = "hidden";
-      const tl = new TimelineLite({
-        onComplete: () => {
-          document.body.style.overflow = "visible";
-        }
-      });
+      const tl = new TimelineLite();
       tl.to("#initialCover", 0.3, { display: "none" })
         .from(".hero", 0.5, { x: -1800 })
         .from(".hero-title", 0.4, { y: -1200, ease: Back.easeOut.config(1.4) })
         .from(".hero-sub", 0.5, { x: 4000, ease: Power2.easeOut }, "-=0.3")
         .from(".header-bg-top", 2, { opacity: 0, ease: Power2.easeIn }, "-=0.5")
         .from(".nav", 0.2, { scaleY: 0 }, "-=1")
+        .add(() => document.body.style.overflow = "visible")
         .from(".branch1", 2.6, { x: -1000 }, "-=1")
         .from(".main", 1, { autoAlpha: 0 }, "-=3");
     }

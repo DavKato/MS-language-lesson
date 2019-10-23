@@ -1,4 +1,4 @@
-UserAgent: *
+User-agent: *
 Disallow:
 
 Sitemap: https://marinasoranzo.com/sitemap.xml
