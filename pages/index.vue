@@ -1,9 +1,9 @@
 <template>
   <div id="top">
-    <!-- <div
+    <div
       id="initialCover"
       style="width:100vw;height:100vh;background-color:#fff;position:fixed;top:0;left:0;z-index:2000;"
-    ></div>-->
+    ></div>
 
     <nav class="nav nav-top">
       <p
@@ -966,6 +966,7 @@ export default {
     LangSwitch
   },
   mounted() {
+    document.getElementById("initialCover").style.display = "none";
     document.body.style.opacity = 1;
   }
 };
