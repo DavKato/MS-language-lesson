@@ -90,6 +90,7 @@ img {
 </style>
 
 <script>
+import gsap from "gsap";
 export default {
   data() {
     return {
@@ -98,7 +99,10 @@ export default {
   },
   methods: {
     changeLocale(to) {
-      this.$i18n.setLocale(to);
+      gsap
+        .timeline()
+        .to("body", { duration: 0.2, opacity: 0, ease: "power2.easeIn" })
+        .add(() => this.$i18n.setLocale(to));
     }
   },
   mounted() {

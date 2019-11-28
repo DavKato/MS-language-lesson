@@ -1,21 +1,21 @@
 <template>
   <div id="top">
-    <div
+    <!-- <div
       id="initialCover"
       style="width:100vw;height:100vh;background-color:#fff;position:fixed;top:0;left:0;z-index:2000;"
-    ></div>
+    ></div>-->
 
     <nav class="nav nav-top">
       <p
         v-scroll-to="{ el: '#top', duration: 500 }"
         class="nav-top-text"
         title="scroll to top"
-      >{{ $t('navTitle')}}</p>
+      >{{ $t("navTitle") }}</p>
       <contact-link class="nav-top-contact" />
       <lang-switch v-show="$vssWidth >= $data.$tab" />
 
       <client-only>
-        <div class="ie" v-if="ie">{{ $t('ie') }}</div>
+        <div class="ie" v-if="ie">{{ $t("ie") }}</div>
       </client-only>
     </nav>
 
@@ -42,7 +42,7 @@
     <img
       class="branch1"
       src="~/assets/img/1x/branch.png"
-      srcset="~/assets/img/1x/branch.png 401w, ~/assets/img/2x/branch.png 802w, ~/assets/img/pc/1x/branch.png 1000w, ~/assets/img/3x/branch.png 1203w, ~/assets/img/pc/2x/branch.png 2000w"
+      srcset="~/assets/img/1x/branch.png     401w, ~/assets/img/2x/branch.png     802w, ~/assets/img/pc/1x/branch.png 1000w, ~/assets/img/3x/branch.png    1203w, ~/assets/img/pc/2x/branch.png 2000w"
       sizes="(max-width: 1000px) 96vw, 1000px"
       alt
     />
@@ -59,7 +59,7 @@
               alt
             />
           </client-only>
-          <h2 class="title-prime">{{ $t('aboutTitle') }}</h2>
+          <h2 class="title-prime">{{ $t("aboutTitle") }}</h2>
           <!-- <p class="title-sub">{{ $t('aboutSub') }}</p> -->
         </div>
 
@@ -70,7 +70,7 @@
           />
           <img
             src="~/assets/img/1x/marina.jpg"
-            srcset="~/assets/img/1x/marina.jpg 415w, ~/assets/img/2x/marina.jpg 830w, ~/assets/img/3x/marina.jpg 1245w"
+            srcset="~/assets/img/1x/marina.jpg  415w, ~/assets/img/2x/marina.jpg  830w, ~/assets/img/3x/marina.jpg 1245w"
             sizes="(max-width: 600) 100vw, 600px"
             alt="Marina's picture in Shibuya"
             title="Marina's picture in Shibuya"
@@ -78,18 +78,18 @@
         </picture>
 
         <div class="about-contents">
-          <p class="about-contents-text">{{ $t('intro.b1') }}</p>
-          <p class="about-contents-text">{{ $t('intro.b2') }}</p>
-          <p class="about-contents-text">{{ $t('intro.b3') }}</p>
-          <p class="about-contents-text">{{ $t('intro.b4') }}</p>
-          <p class="about-contents-text">{{ $t('intro.b5') }}</p>
+          <p class="about-contents-text">{{ $t("intro.b1") }}</p>
+          <p class="about-contents-text">{{ $t("intro.b2") }}</p>
+          <p class="about-contents-text">{{ $t("intro.b3") }}</p>
+          <p class="about-contents-text">{{ $t("intro.b4") }}</p>
+          <p class="about-contents-text">{{ $t("intro.b5") }}</p>
         </div>
       </section>
 
       <img
         class="branch2"
         src="~/assets/img/1x/branch.png"
-        srcset="~/assets/img/1x/branch.png 401w, ~/assets/img/2x/branch.png 802w, ~/assets/img/pc/1x/branch.png 1000w, ~/assets/img/3x/branch.png 1203w, ~/assets/img/pc/2x/branch.png 2000w"
+        srcset="~/assets/img/1x/branch.png     401w, ~/assets/img/2x/branch.png     802w, ~/assets/img/pc/1x/branch.png 1000w, ~/assets/img/3x/branch.png    1203w, ~/assets/img/pc/2x/branch.png 2000w"
         sizes="(max-width: 1000px) 96vw, 1000px"
         alt
         data-scroll
@@ -103,7 +103,7 @@
             srcset="~/assets/img/2x/leaf-y.png 2x, ~/assets/img/3x/leaf-y.png 3x"
             alt
           />
-          <h2 class="title-prime">{{ $t('courseTitle') }}</h2>
+          <h2 class="title-prime">{{ $t("courseTitle") }}</h2>
         </div>
 
         <div class="course-cards">
@@ -118,33 +118,33 @@
           </client-only>
 
           <div class="card" @mouseenter="hover0 = true" @mouseleave="hover0 = false">
-            <div class="card-side card-side__front" :class="{'card-hovered-front': hover0}">
-              <h3 class="card-title card-title-front">{{ $t('card.b1') }}</h3>
+            <div class="card-side card-side__front" :class="{ 'card-hovered-front': hover0 }">
+              <h3 class="card-title card-title-front">{{ $t("card.b1") }}</h3>
               <span class="card-yellow-line"></span>
             </div>
-            <div class="card-side card-side__back" :class="{'card-hovered-back': hover0}">
+            <div class="card-side card-side__back" :class="{ 'card-hovered-back': hover0 }">
               <div class="card-desc">
                 <h4 class="card-desc-price">
                   <b>40€</b>
-                  /{{ $t('card.lesson')}}
+                  /{{ $t("card.lesson") }}
                 </h4>
-                <p class="card-desc-note">{{ $t('card.note1') }}</p>
+                <p class="card-desc-note">{{ $t("card.note1") }}</p>
               </div>
             </div>
           </div>
 
           <div class="card" @mouseover="hover1 = true" @mouseleave="hover1 = false">
-            <div class="card-side card-side__front" :class="{'card-hovered-front': hover1}">
-              <h3 class="card-title card-title-front">{{ $t('card.b2') }}</h3>
+            <div class="card-side card-side__front" :class="{ 'card-hovered-front': hover1 }">
+              <h3 class="card-title card-title-front">{{ $t("card.b2") }}</h3>
               <span class="card-yellow-line"></span>
             </div>
-            <div class="card-side card-side__back" :class="{'card-hovered-back': hover1}">
+            <div class="card-side card-side__back" :class="{ 'card-hovered-back': hover1 }">
               <div class="card-desc">
                 <h4 class="card-desc-price">
                   <b>0.10€</b>
-                  /{{ $t('card.word')}}
+                  /{{ $t("card.word") }}
                 </h4>
-                <p class="card-desc-note">{{ $t('card.note2') }}</p>
+                <p class="card-desc-note">{{ $t("card.note2") }}</p>
               </div>
             </div>
           </div>
@@ -155,7 +155,7 @@
             @mouseover="hover2 = true"
             @mouseleave="hover2 = false"
           >
-            <div class="card-side card-side__front" :class="{'card-hovered-front': hover2}">
+            <div class="card-side card-side__front" :class="{ 'card-hovered-front': hover2 }">
               <img
                 class="card-flowers card-flowers-1"
                 src="~/assets/img/pc/1x/flower.png"
@@ -166,7 +166,7 @@
             </div>
             <div
               class="card-side card-side__back card-side__back"
-              :class="{'card-hovered-back': hover2}"
+              :class="{ 'card-hovered-back': hover2 }"
             >
               <img
                 class="card-back"
@@ -184,7 +184,7 @@
             @mouseover="hover3 = true"
             @mouseleave="hover3 = false"
           >
-            <div class="card-side card-side__front" :class="{'card-hovered-front': hover3}">
+            <div class="card-side card-side__front" :class="{ 'card-hovered-front': hover3 }">
               <img
                 class="card-flowers card-flowers-2"
                 src="~/assets/img/pc/1x/flower.png"
@@ -195,7 +195,7 @@
             </div>
             <div
               class="card-side card-side__back card-side__back"
-              :class="{'card-hovered-back': hover3}"
+              :class="{ 'card-hovered-back': hover3 }"
             >
               <img
                 class="card-back"
@@ -208,33 +208,33 @@
           </div>
 
           <div class="card" @mouseover="hover4 = true" @mouseleave="hover4 = false">
-            <div class="card-side card-side__front" :class="{'card-hovered-front': hover4}">
-              <h3 class="card-title card-title-front">{{ $t('card.b3') }}</h3>
+            <div class="card-side card-side__front" :class="{ 'card-hovered-front': hover4 }">
+              <h3 class="card-title card-title-front">{{ $t("card.b3") }}</h3>
               <span class="card-yellow-line"></span>
             </div>
-            <div class="card-side card-side__back" :class="{'card-hovered-back': hover4}">
+            <div class="card-side card-side__back" :class="{ 'card-hovered-back': hover4 }">
               <div class="card-desc">
                 <h4 class="card-desc-price">
                   <b>50€</b>
-                  /{{ $t('card.hour')}}
+                  /{{ $t("card.hour") }}
                 </h4>
-                <p class="card-desc-note">{{ $t('card.note3') }}</p>
+                <p class="card-desc-note">{{ $t("card.note3") }}</p>
               </div>
             </div>
           </div>
 
           <div class="card" @mouseover="hover5 = true" @mouseleave="hover5 = false">
-            <div class="card-side card-side__front" :class="{'card-hovered-front': hover5}">
-              <h3 class="card-title card-title-front">{{ $t('card.b4') }}</h3>
+            <div class="card-side card-side__front" :class="{ 'card-hovered-front': hover5 }">
+              <h3 class="card-title card-title-front">{{ $t("card.b4") }}</h3>
               <span class="card-yellow-line"></span>
             </div>
-            <div class="card-side card-side__back" :class="{'card-hovered-back': hover5}">
+            <div class="card-side card-side__back" :class="{ 'card-hovered-back': hover5 }">
               <div class="card-desc">
                 <h4 class="card-desc-price">
                   <b>40€</b>
-                  /{{ $t('card.lesson')}}
+                  /{{ $t("card.lesson") }}
                 </h4>
-                <p class="card-desc-note">{{ $t('card.note4') }}</p>
+                <p class="card-desc-note">{{ $t("card.note4") }}</p>
               </div>
             </div>
           </div>
@@ -262,10 +262,10 @@
             srcset="~/assets/img/2x/leaf-w.png 2x, ~/assets/img/3x/leaf-w.png 3x"
             alt
           />
-          <h2 class="title-prime">{{ $t('contactTitle') }}</h2>
+          <h2 class="title-prime">{{ $t("contactTitle") }}</h2>
         </div>
         <div class="contact-contents">
-          <p class="contact-contents-intro">{{ $t('contactIntro') }}</p>
+          <p class="contact-contents-intro">{{ $t("contactIntro") }}</p>
           <a
             target="_blank"
             href="mailto:rosinapilonato@gmail.com"
@@ -285,25 +285,34 @@
 </template>
 
 <style lang="scss" scoped>
-//Scroll Animation
+// Page transition
+.page-enter-active {
+  transition: opacity 0.3s ease-in;
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+// Scroll Animation
 [data-scroll] {
   transition: opacity 1s, transform 1s;
 }
 [data-scroll="in"] {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
 }
 [data-scroll="out"] {
-  opacity: 0;
-  transform: translateY(6rem);
+  opacity: 0.1;
+  transform: translate3d(0, 6rem, 0);
 }
 .branch2[data-scroll="out"] {
   opacity: 1;
-  transform: translateY(0) translateX(10rem);
+  transform: translate3d(20rem, 0, 0);
 }
-.branch2[data-scroll="in"] {
-  transform: translateX(0);
-}
+// .branch2[data-scroll="in"] {
+//   transform: translateX(0);
+// }
 //kind of GLOBAL
 ////////////////////////////////////////////////////////////
 #top {
@@ -928,7 +937,6 @@
 <script>
 import ContactLink from "~/components/ContactLink";
 import LangSwitch from "~/components/LangSwitch";
-import { TimelineLite } from "gsap";
 export default {
   data() {
     return {
@@ -957,41 +965,8 @@ export default {
     ContactLink,
     LangSwitch
   },
-  methods: {
-    intro() {
-      document.body.style.overflow = "hidden";
-      const tl = new TimelineLite();
-      tl.to("#initialCover", 0.3, { display: "none" })
-        .from(".hero", 0.5, { x: -1800 })
-        .from(".hero-title", 0.4, { y: -1200, ease: Back.easeOut.config(1.4) })
-        .from(".hero-sub", 0.5, { x: 4000, ease: Power2.easeOut }, "-=0.3")
-        .from(".header-bg-top", 2, { opacity: 0, ease: Power2.easeIn }, "-=0.5")
-        .from(".nav", 0.2, { scaleY: 0 }, "-=1")
-        .add(() => document.body.style.overflow = "visible")
-        .from(".branch1", 2.6, { x: -1000 }, "-=1")
-        .from(".main", 1, { autoAlpha: 0 }, "-=3");
-    }
-  },
   mounted() {
-    const ua = window.navigator.userAgent;
-    const isIE = /MSIE|Trident/.test(ua);
-
-    if (isIE) {
-      this.ie = true;
-    }
-
-    if (process.client) {
-      this.so = require("scroll-out")({
-        threshold: 0.15,
-        scope: this.$el
-      });
-    }
-    this.intro();
-  },
-  destroyed() {
-    if (process.client) {
-      this.so.teardown();
-    }
+    document.body.style.opacity = 1;
   }
 };
 </script>
