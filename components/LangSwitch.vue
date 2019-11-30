@@ -101,7 +101,7 @@ export default {
     changeLocale(to) {
       gsap
         .timeline()
-        .to("body", { duration: 0.2, opacity: 0, ease: "power4.in" })
+        .to("body", { duration: 0.3, opacity: 0, ease: "power4.in" })
         .add(() => this.$i18n.setLocale(to));
     }
   },

@@ -63,20 +63,21 @@ export default {
           translateY: -1200,
           ease: "back.out(1.4)"
         })
-        .from(
-          ".hero-sub",
-          { duration: 0.5, translateX: 4000, ease: "power2.out" },
-          "-=0.3"
-        )
-        .from(
-          ".header-bg-top",
-          { duration: 2, opacity: 0, ease: "power2.in" },
-          "-=0.5"
-        )
-        .from(".nav", { duration: 0.2, scaleY: 0 }, "-=1")
+        .from(".hero-sub", {
+          duration: 0.3,
+          opacity: 0,
+          translateX: 400,
+          ease: "power2.out"
+        })
+        .from(".header-bg-top", {
+          duration: 1.7,
+          opacity: 0,
+          ease: "power1.in"
+        })
+        .from(".nav", { duration: 0.5, scaleY: 0 }, "-=0.4")
         .add(() => (body.style.overflow = "visible"))
-        .from(".branch1", { duration: 2.6, translateX: -1000 }, "-=1")
-        .from(".main", { duration: 1, autoAlpha: 0 }, "-=3");
+        .from(".branch1", { duration: 2.6, translateX: -1000 }, "-=0.5")
+        .from(".main", { duration: 0.4, autoAlpha: 0 }, "-=2");
     }
   },
   mounted() {

@@ -2,7 +2,7 @@
   <div id="top">
     <div
       id="initialCover"
-      style="width:100vw;height:100vh;background-color:#fff;position:fixed;top:0;left:0;z-index:2000;"
+      style="width:100vw;height:100vh;background-color:#ddd;position:fixed;top:0;left:0;z-index:2000;"
     ></div>
 
     <nav class="nav nav-top">
@@ -287,7 +287,7 @@
 <style lang="scss" scoped>
 // Page transition
 .page-enter-active {
-  transition: opacity 0.3s ease-in;
+  transition: opacity 0.4s ease-in;
 }
 .page-enter,
 .page-leave-active {
