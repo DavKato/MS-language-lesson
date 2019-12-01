@@ -2,7 +2,7 @@
   <div id="top">
     <div
       id="initialCover"
-      style="width:100vw;height:100vh;background-color:#ddd;position:fixed;top:0;left:0;z-index:2000;"
+      style="width:100vw;height:100vh;background-color:#fff;position:fixed;top:0;left:0;z-index:2000;"
     ></div>
 
     <nav class="nav nav-top">
@@ -10,7 +10,9 @@
         v-scroll-to="{ el: '#top', duration: 500 }"
         class="nav-top-text"
         title="scroll to top"
-      >{{ $t("navTitle") }}</p>
+      >
+        {{ $t("navTitle") }}
+      </p>
       <contact-link class="nav-top-contact" />
       <lang-switch v-show="$vssWidth >= $data.$tab" />
 
@@ -23,7 +25,10 @@
       <picture>
         <source
           :media="`(min-width: ${$data.$pc}px)`"
-          srcset="~/assets/img/pc/1x/apple.jpg 1440w, ~/assets/img/pc/2x/apple.jpg 2880w"
+          srcset="
+            ~/assets/img/pc/1x/apple.jpg 1440w,
+            ~/assets/img/pc/2x/apple.jpg 2880w
+          "
           sizes="100vw"
         />
         <img
@@ -42,7 +47,13 @@
     <img
       class="branch1"
       src="~/assets/img/1x/branch.png"
-      srcset="~/assets/img/1x/branch.png     401w, ~/assets/img/2x/branch.png     802w, ~/assets/img/pc/1x/branch.png 1000w, ~/assets/img/3x/branch.png    1203w, ~/assets/img/pc/2x/branch.png 2000w"
+      srcset="
+        ~/assets/img/1x/branch.png     401w,
+        ~/assets/img/2x/branch.png     802w,
+        ~/assets/img/pc/1x/branch.png 1000w,
+        ~/assets/img/3x/branch.png    1203w,
+        ~/assets/img/pc/2x/branch.png 2000w
+      "
       sizes="(max-width: 1000px) 96vw, 1000px"
       alt
     />
@@ -55,7 +66,10 @@
               v-if="$vssWidth >= $data.$tab"
               class="title-leaf"
               src="~/assets/img/1x/leaf-y.png"
-              srcset="~/assets/img/2x/leaf-y.png 2x, ~/assets/img/3x/leaf-y.png 3x"
+              srcset="
+                ~/assets/img/2x/leaf-y.png 2x,
+                ~/assets/img/3x/leaf-y.png 3x
+              "
               alt
             />
           </client-only>
@@ -66,11 +80,18 @@
         <picture class="about-img">
           <source
             :media="`(min-width: ${$data.$pc}px)`"
-            srcset="~/assets/img/pc/1x/marina.jpg 1x, ~/assets/img/pc/2x/marina.jpg 2x"
+            srcset="
+              ~/assets/img/pc/1x/marina.jpg 1x,
+              ~/assets/img/pc/2x/marina.jpg 2x
+            "
           />
           <img
             src="~/assets/img/1x/marina.jpg"
-            srcset="~/assets/img/1x/marina.jpg  415w, ~/assets/img/2x/marina.jpg  830w, ~/assets/img/3x/marina.jpg 1245w"
+            srcset="
+              ~/assets/img/1x/marina.jpg  415w,
+              ~/assets/img/2x/marina.jpg  830w,
+              ~/assets/img/3x/marina.jpg 1245w
+            "
             sizes="(max-width: 600) 100vw, 600px"
             alt="Marina's picture in Shibuya"
             title="Marina's picture in Shibuya"
@@ -89,7 +110,13 @@
       <img
         class="branch2"
         src="~/assets/img/1x/branch.png"
-        srcset="~/assets/img/1x/branch.png     401w, ~/assets/img/2x/branch.png     802w, ~/assets/img/pc/1x/branch.png 1000w, ~/assets/img/3x/branch.png    1203w, ~/assets/img/pc/2x/branch.png 2000w"
+        srcset="
+          ~/assets/img/1x/branch.png     401w,
+          ~/assets/img/2x/branch.png     802w,
+          ~/assets/img/pc/1x/branch.png 1000w,
+          ~/assets/img/3x/branch.png    1203w,
+          ~/assets/img/pc/2x/branch.png 2000w
+        "
         sizes="(max-width: 1000px) 96vw, 1000px"
         alt
         data-scroll
@@ -100,7 +127,10 @@
           <img
             class="title-leaf"
             src="~/assets/img/pc/1x/leaf-y.png"
-            srcset="~/assets/img/2x/leaf-y.png 2x, ~/assets/img/3x/leaf-y.png 3x"
+            srcset="
+              ~/assets/img/2x/leaf-y.png 2x,
+              ~/assets/img/3x/leaf-y.png 3x
+            "
             alt
           />
           <h2 class="title-prime">{{ $t("courseTitle") }}</h2>
@@ -112,17 +142,30 @@
               v-if="$vssWidth < $data.$tab"
               class="course-cards-flower"
               src="~/assets/img/1x/flower.png"
-              srcset="~/assets/img/2x/flower.png 2x, ~/assets/img/3x/flower.png 3x"
+              srcset="
+                ~/assets/img/2x/flower.png 2x,
+                ~/assets/img/3x/flower.png 3x
+              "
               alt
             />
           </client-only>
 
-          <div class="card" @mouseenter="hover0 = true" @mouseleave="hover0 = false">
-            <div class="card-side card-side__front" :class="{ 'card-hovered-front': hover0 }">
+          <div
+            class="card"
+            @mouseenter="hover0 = true"
+            @mouseleave="hover0 = false"
+          >
+            <div
+              class="card-side card-side__front"
+              :class="{ 'card-hovered-front': hover0 }"
+            >
               <h3 class="card-title card-title-front">{{ $t("card.b1") }}</h3>
               <span class="card-yellow-line"></span>
             </div>
-            <div class="card-side card-side__back" :class="{ 'card-hovered-back': hover0 }">
+            <div
+              class="card-side card-side__back"
+              :class="{ 'card-hovered-back': hover0 }"
+            >
               <div class="card-desc">
                 <h4 class="card-desc-price">
                   <b>40€</b>
@@ -133,12 +176,22 @@
             </div>
           </div>
 
-          <div class="card" @mouseover="hover1 = true" @mouseleave="hover1 = false">
-            <div class="card-side card-side__front" :class="{ 'card-hovered-front': hover1 }">
+          <div
+            class="card"
+            @mouseover="hover1 = true"
+            @mouseleave="hover1 = false"
+          >
+            <div
+              class="card-side card-side__front"
+              :class="{ 'card-hovered-front': hover1 }"
+            >
               <h3 class="card-title card-title-front">{{ $t("card.b2") }}</h3>
               <span class="card-yellow-line"></span>
             </div>
-            <div class="card-side card-side__back" :class="{ 'card-hovered-back': hover1 }">
+            <div
+              class="card-side card-side__back"
+              :class="{ 'card-hovered-back': hover1 }"
+            >
               <div class="card-desc">
                 <h4 class="card-desc-price">
                   <b>0.10€</b>
@@ -155,11 +208,17 @@
             @mouseover="hover2 = true"
             @mouseleave="hover2 = false"
           >
-            <div class="card-side card-side__front" :class="{ 'card-hovered-front': hover2 }">
+            <div
+              class="card-side card-side__front"
+              :class="{ 'card-hovered-front': hover2 }"
+            >
               <img
                 class="card-flowers card-flowers-1"
                 src="~/assets/img/pc/1x/flower.png"
-                srcset="~/assets/img/pc/1x/flower.png 182w, ~/assets/img/pc/2x/flower.png 364w"
+                srcset="
+                  ~/assets/img/pc/1x/flower.png 182w,
+                  ~/assets/img/pc/2x/flower.png 364w
+                "
                 sizes="182px"
                 alt
               />
@@ -171,7 +230,10 @@
               <img
                 class="card-back"
                 src="~/assets/img/pc/1x/class.jpg"
-                srcset="~/assets/img/pc/1x/class.jpg 266w, ~/assets/img/pc/2x/class.jpg 532w"
+                srcset="
+                  ~/assets/img/pc/1x/class.jpg 266w,
+                  ~/assets/img/pc/2x/class.jpg 532w
+                "
                 sizes="266px"
                 alt
               />
@@ -184,11 +246,17 @@
             @mouseover="hover3 = true"
             @mouseleave="hover3 = false"
           >
-            <div class="card-side card-side__front" :class="{ 'card-hovered-front': hover3 }">
+            <div
+              class="card-side card-side__front"
+              :class="{ 'card-hovered-front': hover3 }"
+            >
               <img
                 class="card-flowers card-flowers-2"
                 src="~/assets/img/pc/1x/flower.png"
-                srcset="~/assets/img/pc/1x/flower.png 182w, ~/assets/img/pc/2x/flower.png 364w"
+                srcset="
+                  ~/assets/img/pc/1x/flower.png 182w,
+                  ~/assets/img/pc/2x/flower.png 364w
+                "
                 sizes="182px"
                 alt
               />
@@ -200,19 +268,32 @@
               <img
                 class="card-back"
                 src="~/assets/img/pc/1x/lasagna.jpg"
-                srcset="~/assets/img/pc/1x/lasagna.jpg 266w, ~/assets/img/pc/2x/lasagna.jpg 532w"
+                srcset="
+                  ~/assets/img/pc/1x/lasagna.jpg 266w,
+                  ~/assets/img/pc/2x/lasagna.jpg 532w
+                "
                 sizes="266px"
                 alt
               />
             </div>
           </div>
 
-          <div class="card" @mouseover="hover4 = true" @mouseleave="hover4 = false">
-            <div class="card-side card-side__front" :class="{ 'card-hovered-front': hover4 }">
+          <div
+            class="card"
+            @mouseover="hover4 = true"
+            @mouseleave="hover4 = false"
+          >
+            <div
+              class="card-side card-side__front"
+              :class="{ 'card-hovered-front': hover4 }"
+            >
               <h3 class="card-title card-title-front">{{ $t("card.b3") }}</h3>
               <span class="card-yellow-line"></span>
             </div>
-            <div class="card-side card-side__back" :class="{ 'card-hovered-back': hover4 }">
+            <div
+              class="card-side card-side__back"
+              :class="{ 'card-hovered-back': hover4 }"
+            >
               <div class="card-desc">
                 <h4 class="card-desc-price">
                   <b>50€</b>
@@ -223,12 +304,22 @@
             </div>
           </div>
 
-          <div class="card" @mouseover="hover5 = true" @mouseleave="hover5 = false">
-            <div class="card-side card-side__front" :class="{ 'card-hovered-front': hover5 }">
+          <div
+            class="card"
+            @mouseover="hover5 = true"
+            @mouseleave="hover5 = false"
+          >
+            <div
+              class="card-side card-side__front"
+              :class="{ 'card-hovered-front': hover5 }"
+            >
               <h3 class="card-title card-title-front">{{ $t("card.b4") }}</h3>
               <span class="card-yellow-line"></span>
             </div>
-            <div class="card-side card-side__back" :class="{ 'card-hovered-back': hover5 }">
+            <div
+              class="card-side card-side__back"
+              :class="{ 'card-hovered-back': hover5 }"
+            >
               <div class="card-desc">
                 <h4 class="card-desc-price">
                   <b>40€</b>
@@ -245,7 +336,10 @@
         <picture>
           <source
             :media="`(min-width: ${$data.$pc}px)`"
-            srcset="~/assets/img/pc/1x/tree.jpg 1440w, ~/assets/img/pc/2x/tree.jpg 2880w"
+            srcset="
+              ~/assets/img/pc/1x/tree.jpg 1440w,
+              ~/assets/img/pc/2x/tree.jpg 2880w
+            "
             sizes="100vw"
           />
           <img
@@ -259,7 +353,10 @@
           <img
             class="title-leaf contact-title-leaf"
             src="~/assets/img/pc/1x/leaf-w.png"
-            srcset="~/assets/img/2x/leaf-w.png 2x, ~/assets/img/3x/leaf-w.png 3x"
+            srcset="
+              ~/assets/img/2x/leaf-w.png 2x,
+              ~/assets/img/3x/leaf-w.png 3x
+            "
             alt
           />
           <h2 class="title-prime">{{ $t("contactTitle") }}</h2>
@@ -271,7 +368,8 @@
             href="mailto:rosinapilonato@gmail.com"
             class="contact-contents-address"
             title="Jump to your default mail client"
-          >rosinapilonato@gmail.com</a>
+            >rosinapilonato@gmail.com</a
+          >
         </div>
       </section>
     </main>

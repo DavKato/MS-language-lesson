@@ -57,7 +57,7 @@ export default {
       const body = document.body;
       body.style.overflow = "hidden";
       const tl = gsap.timeline();
-      tl.from(".hero", { duration: 0.5, translateX: -1800, delay: 0.6 })
+      tl.from(".hero", { duration: 0.5, translateX: -1800, delay: 0.4 })
         .from(".hero-title", {
           duration: 0.4,
           translateY: -1200,
