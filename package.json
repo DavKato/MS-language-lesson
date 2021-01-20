@@ -14,7 +14,7 @@
     "@nuxtjs/google-analytics": "^2.2.1",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/sitemap": "^2.0.1",
-    "gsap": "^3.0.1",
+    "gsap": "^3.6.0",
     "nuxt": "^2.10.2",
     "nuxt-i18n": "^6.4.0",
     "scroll-out": "^2.2.7",
